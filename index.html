@@ -167,7 +167,7 @@
     .photo-placeholder {
       width: 220px;
       height: 220px;
-      border-radius: 30%;
+      border-radius: 50%;
       background: var(--navy-mid);
       border: 4px solid var(--gold);
       display: flex;
@@ -466,16 +466,102 @@
       margin: 0 auto;
     }
 
+    /* ── HAMBURGER ── */
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+      min-width: 44px;
+      min-height: 44px;
+    }
+    .nav-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: white;
+      border-radius: 2px;
+      transition: all 0.25s ease;
+    }
+    .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-toggle.open span:nth-child(2) { opacity: 0; }
+    .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
     /* ── RESPONSIVE ── */
     @media (max-width: 700px) {
-      .hero { flex-direction: column-reverse; gap: 2rem; padding: 3rem 1.5rem; }
-      .hero-photo img, .photo-placeholder { width: 140px; height: 140px; }
-      nav { padding: 0 1.5rem; }
-      .nav-links { gap: 1.2rem; }
-      .nav-links a { font-size: 0.75rem; }
-      section { padding: 3.5rem 1.5rem; }
-      .exp-item { grid-template-columns: 1fr; gap: 0.4rem; }
-      .contact-inner { flex-direction: column; gap: 2rem; }
+
+      /* Nav */
+      nav { padding: 0 1.2rem; }
+      .nav-toggle { display: flex; }
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        top: 60px; left: 0; right: 0;
+        background: var(--navy);
+        padding: 1rem 1.5rem 2rem;
+        gap: 0;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+        z-index: 150;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links li { border-bottom: 1px solid rgba(255,255,255,0.08); }
+      .nav-links li:last-child { border-bottom: none; }
+      .nav-links a { display: block; padding: 0.9rem 0; font-size: 1rem; letter-spacing: 0.03em; min-height: 44px; }
+
+      /* Hero */
+      .hero {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1.8rem;
+        padding: 2.5rem 1.4rem 3rem;
+      }
+      .hero-photo { order: -1; }
+      .hero-photo img, .photo-placeholder { width: 120px; height: 120px; }
+      .hero h1 { font-size: 2.1rem; }
+      .hero-title { font-size: 0.88rem; line-height: 1.6; }
+      .hero-bio { font-size: 0.95rem; max-width: 100%; }
+      .tags { justify-content: center; }
+      .hero-links { flex-direction: column; align-items: stretch; gap: 0.7rem; width: 100%; }
+      .btn { width: 100%; text-align: center; padding: 0.8rem 1.4rem; font-size: 0.9rem; }
+
+      /* Sections */
+      section { padding: 2.5rem 1.4rem; }
+      .section-title { font-size: 1.55rem; margin-bottom: 1.8rem; }
+
+      /* Education */
+      .edu-item { gap: 1rem; }
+
+      /* Experience */
+      .exp-item { grid-template-columns: 1fr; gap: 0.2rem; padding: 1.4rem 0; }
+      .exp-date { margin-bottom: 0.3rem; }
+
+      /* Publications — streamlined for small screens */
+      .pub-item { flex-direction: column; gap: 0.5rem; padding: 1.1rem 0; }
+      .pub-meta { width: auto; text-align: left; display: flex; align-items: center; gap: 0.6rem; }
+      .pub-date-text { display: inline; }
+      .pub-desc { display: none; }
+      .pub-arrow { display: none; }
+      .pub-title { font-size: 0.93rem; }
+      .btn-view-all { display: block; width: 100%; text-align: center; padding: 0.8rem 1rem; }
+
+      /* Contact */
+      .contact-section { padding: 3rem 1.4rem; }
+      .contact-inner { flex-direction: column; gap: 0; }
+      .contact-link { padding: 0.5rem 0; min-height: 44px; }
+
+      /* Footer */
+      footer { font-size: 0.75rem; padding: 1.2rem; }
+    }
+
+    @media (max-width: 400px) {
+      .hero h1 { font-size: 1.8rem; }
+      .section-title { font-size: 1.35rem; }
     }
 
     /* ── ANIMATIONS ── */
@@ -496,12 +582,15 @@
   <!-- NAV -->
   <nav>
     <a href="#" class="nav-logo">Hailey Gibbs, Ph.D.</a>
+    <button class="nav-toggle" aria-label="Toggle menu" onclick="this.classList.toggle('open'); document.querySelector('.nav-links').classList.toggle('open');">
+      <span></span><span></span><span></span>
+    </button>
     <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#education">Education</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#publications">Publications</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#about" onclick="document.querySelector('.nav-links').classList.remove('open'); document.querySelector('.nav-toggle').classList.remove('open');">About</a></li>
+      <li><a href="#education" onclick="document.querySelector('.nav-links').classList.remove('open'); document.querySelector('.nav-toggle').classList.remove('open');">Education</a></li>
+      <li><a href="#experience" onclick="document.querySelector('.nav-links').classList.remove('open'); document.querySelector('.nav-toggle').classList.remove('open');">Experience</a></li>
+      <li><a href="#publications" onclick="document.querySelector('.nav-links').classList.remove('open'); document.querySelector('.nav-toggle').classList.remove('open');">Publications</a></li>
+      <li><a href="#contact" onclick="document.querySelector('.nav-links').classList.remove('open'); document.querySelector('.nav-toggle').classList.remove('open');">Contact</a></li>
     </ul>
   </nav>
 
@@ -531,6 +620,7 @@
     <div class="hero-photo">
       <img
         src="1729114834194.jpeg"
+        alt="Hailey Gibbs headshot"
         onerror="this.style.display='none'; document.getElementById('photo-fallback').style.display='flex';"
       />
       <div class="photo-placeholder" id="photo-fallback" style="display:none;">
@@ -547,7 +637,7 @@
     <p class="section-label">Background</p>
     <h2 class="section-title">About</h2>
     <p style="font-size:1.02rem; line-height:1.8; color:#3a4560; margin-bottom:1.4rem;">
-      Hailey Gibbs is the Associate Director of Early Childhood Policy at the Center for American Progress, where her work focuses on the social and economic benefits of investing in early child care and education, promoting equity through child care access and infrastructure, and best practices in supporting children's learning.
+      Hailey Gibbs is an Associate Director of Early Childhood Policy at the Center for American Progress, where her work focuses on the social and economic benefits of investing in early child care and education, promoting equity through child care access and infrastructure, and best practices in supporting children's learning.
     </p>
     <p style="font-size:1.02rem; line-height:1.8; color:#3a4560; margin-bottom:1.4rem;">
       She has written for <em>Medium</em> and <em>The Conversation</em>, and has contributed to the Brookings Institution's <em>Education Plus Development</em> blog. Her scholarly work has appeared in peer-reviewed journals including the <em>Journal of Experimental Child Psychology</em>, <em>Cognitive Development</em>, and <em>Child Development</em>.
