@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hailey Gibbs | Early Childhood Policy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:   #1a2744;
+      --navy-mid: #253460;
+      --slate:  #4a5568;
+      --gold:   #c9922a;
+      --gold-light: #f0d9a8;
+      --cream:  #faf8f4;
+      --white:  #ffffff;
+      --border: #e2ddd6;
+      --serif:  'DM Serif Display', Georgia, serif;
+      --sans:   'DM Sans', system-ui, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--sans);
+      background: var(--cream);
+      color: var(--navy);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--navy);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2.5rem;
+      height: 60px;
+    }
+
+    .nav-logo {
+      font-family: var(--serif);
+      color: var(--white);
+      font-size: 1.1rem;
+      letter-spacing: 0.02em;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+
+    .nav-links a {
+      color: rgba(255,255,255,0.75);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--gold-light); }
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--navy);
+      padding: 5rem 2.5rem 4.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4rem;
+    }
+
+    .hero-text { max-width: 560px; }
+
+    .hero-eyebrow {
+      font-family: var(--sans);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+
+    .hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(2.4rem, 5vw, 3.6rem);
+      color: var(--white);
+      line-height: 1.1;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-title {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.65);
+      margin-bottom: 1.8rem;
+      font-weight: 300;
+    }
+
+    .hero-bio {
+      color: rgba(255,255,255,0.82);
+      font-size: 1.02rem;
+      line-height: 1.75;
+      max-width: 520px;
+      margin-bottom: 2.2rem;
+    }
+
+    .hero-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.6rem 1.4rem;
+      border-radius: 3px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--white);
+    }
+
+    .btn-primary:hover { background: #b07d1e; }
+
+    .btn-outline {
+      border: 1.5px solid rgba(255,255,255,0.4);
+      color: rgba(255,255,255,0.85);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--gold-light);
+      color: var(--gold-light);
+    }
+
+    .hero-photo {
+      flex-shrink: 0;
+    }
+
+    .hero-photo img {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--gold);
+      display: block;
+    }
+
+    .photo-placeholder {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: var(--navy-mid);
+      border: 4px solid var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .photo-placeholder svg { opacity: 0.4; }
+
+    /* ── EXPERTISE TAGS ── */
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .tag {
+      background: rgba(201,146,42,0.12);
+      color: var(--gold);
+      border: 1px solid rgba(201,146,42,0.3);
+      padding: 0.25rem 0.75rem;
+      border-radius: 100px;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+    }
+
+    /* ── SECTIONS ── */
+    section {
+      padding: 5rem 2.5rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.6rem;
+    }
+
+    .section-title {
+      font-family: var(--serif);
+      font-size: 2rem;
+      color: var(--navy);
+      margin-bottom: 2.5rem;
+      padding-bottom: 0.8rem;
+      border-bottom: 2px solid var(--border);
+    }
+
+    /* ── EDUCATION ── */
+    .edu-list { display: flex; flex-direction: column; gap: 1.8rem; }
+
+    .edu-item {
+      display: flex;
+      gap: 1.5rem;
+      align-items: flex-start;
+    }
+
+    .edu-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 8px;
+      background: var(--navy);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .edu-icon svg { opacity: 0.85; }
+
+    .edu-degree {
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--navy);
+      margin-bottom: 0.15rem;
+    }
+
+    .edu-school {
+      font-size: 0.95rem;
+      color: var(--slate);
+    }
+
+    /* ── EXPERIENCE ── */
+    .exp-list { display: flex; flex-direction: column; }
+
+    .exp-item {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 1.5rem;
+      padding: 2rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .exp-item:first-child { border-top: 1px solid var(--border); }
+
+    .exp-date {
+      font-size: 0.82rem;
+      color: var(--gold);
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      padding-top: 3px;
+    }
+
+    .exp-role {
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--navy);
+      margin-bottom: 0.2rem;
+    }
+
+    .exp-org {
+      font-size: 0.9rem;
+      color: var(--slate);
+      font-weight: 500;
+      margin-bottom: 0.6rem;
+    }
+
+    .exp-desc {
+      font-size: 0.93rem;
+      color: #5a6170;
+      line-height: 1.65;
+    }
+
+    /* ── PUBLICATIONS ── */
+    .pub-list { display: flex; flex-direction: column; gap: 0; }
+
+    .pub-item {
+      display: flex;
+      gap: 1.2rem;
+      padding: 1.4rem 0;
+      border-bottom: 1px solid var(--border);
+      align-items: flex-start;
+      text-decoration: none;
+      transition: background 0.15s;
+    }
+
+    .pub-item:first-child { border-top: 1px solid var(--border); }
+
+    .pub-item:hover { background: rgba(201,146,42,0.04); }
+
+    .pub-meta {
+      flex-shrink: 0;
+      width: 100px;
+      text-align: right;
+    }
+
+    .pub-type {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.5rem;
+      border-radius: 3px;
+      margin-bottom: 0.4rem;
+    }
+
+    .type-report { background: rgba(26,39,68,0.08); color: var(--navy); }
+    .type-article { background: rgba(201,146,42,0.12); color: #8a5e10; }
+    .type-fact { background: rgba(74,85,104,0.08); color: var(--slate); }
+    .type-video { background: rgba(220,60,60,0.1); color: #a03030; }
+    .type-news  { background: rgba(50,150,100,0.1); color: #1e6b45; }
+
+    .pub-date-text {
+      font-size: 0.78rem;
+      color: #999;
+      display: block;
+    }
+
+    .pub-content { flex: 1; }
+
+    .pub-title {
+      font-size: 0.97rem;
+      font-weight: 600;
+      color: var(--navy);
+      line-height: 1.45;
+      margin-bottom: 0.3rem;
+      transition: color 0.2s;
+    }
+
+    .pub-item:hover .pub-title { color: var(--gold); }
+
+    .pub-desc {
+      font-size: 0.85rem;
+      color: var(--slate);
+      line-height: 1.55;
+    }
+
+    .pub-arrow {
+      flex-shrink: 0;
+      margin-top: 3px;
+      color: var(--border);
+      transition: color 0.2s, transform 0.2s;
+    }
+
+    .pub-item:hover .pub-arrow {
+      color: var(--gold);
+      transform: translateX(3px);
+    }
+
+    .view-all-wrap {
+      margin-top: 2rem;
+      text-align: center;
+    }
+
+    .btn-view-all {
+      display: inline-block;
+      padding: 0.65rem 1.8rem;
+      border: 2px solid var(--navy);
+      border-radius: 3px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--navy);
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      transition: all 0.2s;
+    }
+
+    .btn-view-all:hover {
+      background: var(--navy);
+      color: var(--white);
+    }
+
+    /* ── CONTACT ── */
+    .contact-section {
+      background: var(--navy);
+      padding: 5rem 2.5rem;
+    }
+
+    .contact-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      gap: 4rem;
+      align-items: flex-start;
+    }
+
+    .contact-text { flex: 1; }
+
+    .contact-section .section-title {
+      color: var(--white);
+      border-bottom-color: rgba(255,255,255,0.15);
+    }
+
+    .contact-section .section-label { color: var(--gold-light); }
+
+    .contact-desc {
+      color: rgba(255,255,255,0.7);
+      font-size: 0.97rem;
+      margin-bottom: 2rem;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .contact-link {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      font-size: 0.93rem;
+      transition: color 0.2s;
+    }
+
+    .contact-link:hover { color: var(--gold-light); }
+
+    .contact-link svg { flex-shrink: 0; opacity: 0.7; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #0f1929;
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.35);
+    }
+
+    /* ── DIVIDER ── */
+    .section-divider {
+      height: 1px;
+      background: var(--border);
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 700px) {
+      .hero { flex-direction: column-reverse; gap: 2rem; padding: 3rem 1.5rem; }
+      .hero-photo img, .photo-placeholder { width: 140px; height: 140px; }
+      nav { padding: 0 1.5rem; }
+      .nav-links { gap: 1.2rem; }
+      .nav-links a { font-size: 0.75rem; }
+      section { padding: 3.5rem 1.5rem; }
+      .exp-item { grid-template-columns: 1fr; gap: 0.4rem; }
+      .contact-inner { flex-direction: column; gap: 2rem; }
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-eyebrow { animation: fadeUp 0.5s ease both; }
+    .hero h1      { animation: fadeUp 0.5s 0.1s ease both; }
+    .hero-title   { animation: fadeUp 0.5s 0.18s ease both; }
+    .hero-bio     { animation: fadeUp 0.5s 0.26s ease both; }
+    .hero-links   { animation: fadeUp 0.5s 0.34s ease both; }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">Hailey Gibbs</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="about" style="max-width:100%; padding-left:max(2.5rem, calc(50% - 420px)); padding-right:max(2.5rem, calc(50% - 420px));">
+    <div class="hero-text">
+      <p class="hero-eyebrow">Early Childhood Policy</p>
+      <h1>Hailey Gibbs</h1>
+      <p class="hero-title">Associate Director, Early Childhood Policy &nbsp;·&nbsp; She/Her<br>Center for American Progress</p>
+      <div class="tags">
+        <span class="tag">Child Care</span>
+        <span class="tag">Early Childhood</span>
+        <span class="tag">Head Start</span>
+        <span class="tag">Family Economic Security</span>
+        <span class="tag">Education Equity</span>
+        <span class="tag">Extreme Heat &amp; Climate</span>
+      </div>
+      <p class="hero-bio">
+        I research the social and economic benefits of investing in early child care and education, promote equity through child care access and infrastructure, and examine best practices in supporting children's learning for the 21st century. My work bridges rigorous academic research and actionable policy.
+      </p>
+      <div class="hero-links">
+        <a href="#publications" class="btn btn-primary">View Publications</a>
+        <a href="https://www.americanprogress.org/people/hailey-gibbs/" target="_blank" rel="noopener" class="btn btn-outline">CAP Staff Page</a>
+        <a href="https://www.linkedin.com/in/hailey-gibbs/" target="_blank" rel="noopener" class="btn btn-outline">LinkedIn</a>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <img
+        src="https://www.americanprogress.org/wp-content/uploads/sites/2/2022/04/Hailey_Gibbs_Headshot.jpg"
+        alt="Hailey Gibbs headshot"
+        onerror="this.style.display='none'; document.getElementById('photo-fallback').style.display='flex';"
+      />
+      <div class="photo-placeholder" id="photo-fallback" style="display:none;">
+        <svg width="52" height="52" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="1.2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/>
+          <circle cx="12" cy="7" r="4"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT EXTENDED -->
+  <section id="about-detail">
+    <p class="section-label">Background</p>
+    <h2 class="section-title">About</h2>
+    <p style="font-size:1.02rem; line-height:1.8; color:#3a4560; margin-bottom:1.4rem;">
+      Hailey Gibbs is an Associate Director of Early Childhood Policy at the Center for American Progress, where her work focuses on the social and economic benefits of investing in early child care and education, promoting equity through child care access and infrastructure, and best practices in supporting children's learning for the 21st century.
+    </p>
+    <p style="font-size:1.02rem; line-height:1.8; color:#3a4560; margin-bottom:1.4rem;">
+      She has written for <em>Medium</em> and <em>The Conversation</em>, and has contributed to the Brookings Institution's <em>Education Plus Development</em> blog. Her scholarly work has appeared in peer-reviewed journals including the <em>Journal of Experimental Child Psychology</em>, <em>Cognitive Development</em>, and <em>Child Development</em>.
+    </p>
+    <p style="font-size:1.02rem; line-height:1.8; color:#3a4560;">
+      Prior to joining American Progress, Gibbs served as a postdoctoral researcher at the Temple University Infant and Child Lab under Dr. Kathryn Hirsh-Pasek, contributing to the Playful Learning Landscapes initiative — a project focused on expanding equity-based, culturally relevant learning opportunities in public spaces.
+    </p>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- EDUCATION -->
+  <section id="education">
+    <p class="section-label">Academic Training</p>
+    <h2 class="section-title">Education</h2>
+    <div class="edu-list">
+
+      <div class="edu-item">
+        <div class="edu-icon">
+          <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="1.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 14l6.16-3.422A12.083 12.083 0 0121 12c0 3.866-4.03 7-9 7s-9-3.134-9-7a12.1 12.1 0 012.84-1.422L12 14z"/>
+          </svg>
+        </div>
+        <div>
+          <p class="edu-degree">Ph.D., Human Development</p>
+          <p class="edu-school">University of Maryland</p>
+        </div>
+      </div>
+
+      <div class="edu-item">
+        <div class="edu-icon">
+          <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="1.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 14l6.16-3.422A12.083 12.083 0 0121 12c0 3.866-4.03 7-9 7s-9-3.134-9-7a12.1 12.1 0 012.84-1.422L12 14z"/>
+          </svg>
+        </div>
+        <div>
+          <p class="edu-degree">B.S., Psychology</p>
+          <p class="edu-school">Salisbury University</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <p class="section-label">Career</p>
+    <h2 class="section-title">Work Experience</h2>
+    <div class="exp-list">
+
+      <div class="exp-item">
+        <div class="exp-date">Present</div>
+        <div>
+          <p class="exp-role">Associate Director, Early Childhood Policy</p>
+          <p class="exp-org">Center for American Progress · Washington, DC</p>
+          <p class="exp-desc">Leads policy research on child care and early education, with a focus on equity, access, and economic investment in the early childhood system. Work informs federal and state policy discussions on child care affordability, Head Start, and climate impacts on early learning settings.</p>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-date">Postdoctoral</div>
+        <div>
+          <p class="exp-role">Postdoctoral Researcher</p>
+          <p class="exp-org">Temple University Infant and Child Lab · Philadelphia, PA</p>
+          <p class="exp-desc">Conducted research under Dr. Kathryn Hirsh-Pasek on the Playful Learning Landscapes initiative, expanding equity-based, culturally relevant learning opportunities in public spaces. Published findings in leading developmental science journals.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <p style="font-size:0.85rem; color:#aaa; margin-top:1.5rem;">
+      For a full work history, visit <a href="https://www.linkedin.com/in/hailey-gibbs/" target="_blank" style="color:var(--gold); text-decoration:none;">LinkedIn →</a>
+    </p>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- PUBLICATIONS -->
+  <section id="publications">
+    <p class="section-label">Center for American Progress</p>
+    <h2 class="section-title">Published Work</h2>
+
+    <div class="pub-list">
+
+      <a class="pub-item" href="https://www.americanprogress.org/article/cap-comments-on-hhs-notice-rolling-back-progress-toward-improving-child-care-assistance-for-low-income-families/" target="_blank" rel="noopener">
+        <div class="pub-meta">
+          <span class="pub-type type-article">Article</span>
+          <span class="pub-date-text">Feb 2026</span>
+        </div>
+        <div class="pub-content">
+          <p class="pub-title">CAP Comments on HHS' Notice Rolling Back Progress Toward Improving Child Care Assistance for Low-Income Families</p>
+          <p class="pub-desc">Comment letter opposing HHS efforts to roll back progress toward paying child care providers more fairly and lowering costs for families.</p>
+        </div>
+        <svg class="pub-arrow" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+      </a>
+
+      <a class="pub-item" href="https://www.americanprogress.org/article/trumps-attack-on-child-care-funding-undermines-early-educators-shortchanges-children-and-increases-costs-for-families/" target="_blank" rel="noopener">
+        <div class="pub-meta">
+          <span class="pub-type type-article">Article</span>
+          <span class="pub-date-text">Jan 2026</span>
+        </div>
+        <div class="pub-content">
+          <p class="pub-title">Trump's Attack on Child Care Funding Undermines Early Educators, Shortchanges Children, and Increases Costs for Families</p>
+          <p class="pub-desc">Analysis of the Trump administration's effort to freeze essential child care funding using allegations of fraud in Minnesota.</p>
+        </div>
+        <svg class="pub-arrow" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+      </a>
+
+      <a class="pub-item" href="https://www.americanprogress.org/article/head-start-is-a-model-for-supporting-child-and-family-mental-health/" target="_blank" rel="noopener">
+        <div class="pub-meta">
+          <span class="pub-type type-report">Report</span>
+          <span class="pub-date-text">Dec 2025</span>
+        </div>
+        <div class="pub-content">
+          <p class="pub-title">Head Start Is a Model for Supporting Child and Family Mental Health</p>
+          <p class="pub-desc">Amid a pronounced youth mental health crisis, examines how Head Start addresses the needs of vulnerable young children and families.</p>
+        </div>
+        <svg class="pub-arrow" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+      </a>
+
+      <a class="pub-item" href="https://www.americanprogress.org/article/child-care-professionals-are-on-the-front-lines-as-climate-change-risks-childrens-health-and-development/" target="_blank" rel="noopener">
+        <div class="pub-meta">
+          <span class="pub-type type-report">Report</span>
+          <span class="pub-date-text">Oct 2025</span>
+        </div>
+        <div class="pub-content">
+          <p class="pub-title">Child Care Professionals Are on the Front Lines as Climate Change Risks Children's Health and Development</p>
+          <p class="pub-desc">As the climate changes and federal rollbacks to disaster relief mount, early educators face an increasingly untenable landscape requiring state and local action.</p>
+        </div>
+        <svg class="pub-arrow" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+      </a>
+
+      <a class="pub-item" href="https://www.americanprogress.org/article/cap-comments-on-hhs-notice-affecting-head-start-eligibility-criteria/" target="_blank" rel="noopener">
+        <div class="pub-meta">
+          <span class="pub-type type-article">Article</span>
+          <span class="pub-date-text">Aug 2025</span>
+        </div>
+        <div class="pub-content">
+          <p class="pub-title">CAP Comments on HHS' Notice Affecting Head Start Eligibility Criteria</p>
+          <p class="pub-desc">Comment letter opposing HHS' unprecedented requirement for Head Start programs to verify citizenship status for family eligibility.</p>
+        </div>
+        <svg class="pub-arrow" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+      </a>
+
+      <a class="pub-item" href="https://www.americanprogress.org/article/debunking-myths-about-head-start-how-the-program-promotes-opportunity-and-strengthens-families-communities-and-economies/" target="_blank" rel="noopener">
+        <div class="pub-meta">
+          <span class="pub-type type-report">Report</span>
+          <span class="pub-date-text">Jun 2025</span>
+        </div>
+        <div class="pub-content">
+          <p class="pub-title">Debunking Myths About Head Start: How the Program Promotes Opportunity and Strengthens Families, Communities, and Economies</p>
+          <p class="pub-desc">Decades of research illustrate Head Start's effectiveness and the crucial role it plays in state and local economies.</p>
+        </div>
+        <svg class="pub-arrow" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+      </a>
+
+      <a class="pub-item" href="https://www.americanprogress.org/article/a-path-forward-on-child-care-regulation-differentiating-between-harmful-deregulation-and-helpful-reform/" target="_blank" rel="noopener">
+        <div class="pub-meta">
+          <span class="pub-type type-report">Report</span>
+          <span class="pub-date-text">May 2025</span>
+        </div>
+        <div class="pub-content">
+          <p class="pub-title">A Path Forward on Child Care Regulation: Differentiating Between Harmful Deregulation and Helpful Reform</p>
+          <p class="pub-desc">States can make child care licensing reforms that ease burdens on providers and improve access — without endangering child health and safety.</p>
+        </div>
+        <svg class="pub-arrow" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+      </a>
+
+      <a class="pub-item" href="https://dcjournal.com/about-extreme-heat-we-need-to-prioritize-children/" target="_blank" rel="noopener">
+        <div class="pub-meta">
+          <span class="pub-type type-news">Op-Ed</span>
+          <span class="pub-date-text">Jul 2025</span>
+        </div>
+        <div class="pub-content">
+          <p class="pub-title">About Extreme Heat, We Need to Prioritize Children</p>
+          <p class="pub-desc">Op-ed in InsideSources highlighting proven strategies that communities and policymakers can adopt to better mitigate the deadly effects of extreme heat for young children and infants.</p>
+        </div>
+        <svg class="pub-arrow" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+      </a>
+
+    </div>
+
+    <div class="view-all-wrap">
+      <a href="https://www.americanprogress.org/people/hailey-gibbs/" target="_blank" rel="noopener" class="btn-view-all">
+        View All 48 Publications at CAP →
+      </a>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <div class="contact-section" id="contact">
+    <div class="contact-inner">
+      <div class="contact-text">
+        <p class="section-label">Get in Touch</p>
+        <h2 class="section-title">Contact</h2>
+        <p class="contact-desc">
+          For media inquiries, speaking requests, or questions about my work in early childhood policy, please reach out through the Center for American Progress or connect on LinkedIn.
+        </p>
+        <div class="contact-links">
+          <a class="contact-link" href="https://www.americanprogress.org/people/hailey-gibbs/" target="_blank" rel="noopener">
+            <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/></svg>
+            americanprogress.org/people/hailey-gibbs
+          </a>
+          <a class="contact-link" href="https://www.linkedin.com/in/hailey-gibbs/" target="_blank" rel="noopener">
+            <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            linkedin.com/in/hailey-gibbs
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2026 Hailey Gibbs · Built with GitHub Pages</p>
+  </footer>
+
+</body>
+</html>
